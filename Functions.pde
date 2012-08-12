@@ -9,12 +9,12 @@ void initialize() {
   background(WHITE);
 
   translate(width / 2, height / 2);
-  rotate(-PI / 2);
+  rotate(radians(180));
   
   // カメの初期状態
   t_pos_x = 0;
   t_pos_y = 0;
-  t_angle = 90;
+  t_angle = 0;
   t_pen_color = BLACK;
   t_pen_enable = true;
 }
@@ -26,12 +26,13 @@ void tForward(int dst)
   stroke(t_pen_color);
 
   // 線を引く
-  if (t_pen_enable) {
+  //if (t_pen_enable == true) {
+  if (t_pen_enable) { // if文はtrueかどうかを見分けるので、このようにも書ける
     line(
       t_pos_y,
       t_pos_x, 
-      dst * sin(radians(t_angle)) + t_pos_y, 
-      dst * cos(radians(t_angle)) + t_pos_x
+      t_pos_y + (dst * sin(radians(t_angle))), 
+      t_pos_x + (dst * cos(radians(t_angle)))
     );
   }
 
