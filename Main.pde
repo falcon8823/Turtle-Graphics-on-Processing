@@ -7,12 +7,12 @@ void setup()
   commands();
   
   //rotate(radians(t_angle));
-  PImage turtle = loadImage("kame03-m.gif");
+  PImage turtle_img = loadImage("kame03-m.gif");
   
   pushMatrix();
-  translate(t_pos_y, t_pos_x);
-  rotate(radians(-t_angle + 180));
-  image(turtle, -25, -30, 50, 60);
+  translate(t_pos_x, t_pos_y);
+  rotate(radians(t_angle + 90));
+  image(turtle_img, -25, -30, 50, 60);
   popMatrix();
 }
 
